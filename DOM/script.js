@@ -71,6 +71,7 @@ topMenuEl.addEventListener("click", function (evt) {
   for (let i = 0; i < topMenuLinks.length; i++) {
     topMenuLinks[i].classList.remove("active");
   }
+  evt.target.NAV.classList.add("active");
 });
 
 console.log(topMenuLinks);
