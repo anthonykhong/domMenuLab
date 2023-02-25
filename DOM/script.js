@@ -23,3 +23,5 @@ for (let i = 0; i < menuLinks.length; i++) {
   linkEl.textContent = link.text;
   topMenuEl.appendChild(linkEl);
 }
+
+const subMenuEl = document.getElementById("sub-menu");
