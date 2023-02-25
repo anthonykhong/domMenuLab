@@ -28,4 +28,6 @@ const subMenuEl = document.getElementById("sub-menu");
 subMenuEl.style.height = "100%";
 subMenuEl.style.background = "var(--sub-menu-bg)";
 subMenuEl.classList = "flex-around";
+subMenuEl.style.position = "absolute";
+subMenuEl.style.top = "0";
 console.log(subMenuEl);
