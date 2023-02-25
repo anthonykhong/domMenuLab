@@ -68,6 +68,9 @@ topMenuEl.addEventListener("click", function (evt) {
     subMenuEl.style.top = "0";
     return;
   }
+  for (let i = 0; i < topMenuLinks.length; i++) {
+    topMenuLinks[i].classList.remove("active");
+  }
 });
 
 console.log(topMenuLinks);
