@@ -62,5 +62,12 @@ topMenuEl.addEventListener("click", function (evt) {
   if (evt.target.NAV !== "a") {
     return;
   }
+  if (evt.target.NAV === "active") {
+    evt.target.NAV.remove("active");
+    const showingSubMenu = false;
+    subMenuEl.style.top = "0";
+    return;
+  }
 });
+
 console.log(topMenuLinks);
