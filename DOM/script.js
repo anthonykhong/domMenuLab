@@ -53,4 +53,7 @@ subMenuEl.style.background = "var(--sub-menu-bg)";
 subMenuEl.classList = "flex-around";
 subMenuEl.style.position = "absolute";
 subMenuEl.style.top = "0";
-console.log(subMenuEl);
+
+const topMenuLinks = document.querySelectorAll("a");
+const showingSubMenu = false;
+console.log(topMenuLinks);
