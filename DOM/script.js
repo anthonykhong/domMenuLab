@@ -56,4 +56,11 @@ subMenuEl.style.top = "0";
 
 const topMenuLinks = document.querySelectorAll("a");
 const showingSubMenu = false;
+
+topMenuEl.addEventListener("click", function (evt) {
+  evt.preventDefault();
+  if (evt.target.NAV !== "a") {
+    return;
+  }
+});
 console.log(topMenuLinks);
