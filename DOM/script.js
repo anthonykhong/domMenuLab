@@ -59,7 +59,9 @@ const showingSubMenu = false;
 
 topMenuEl.addEventListener("click", function (evt) {
   evt.preventDefault();
-  if (evt.target.tagName !== "A") return;
+  if (evt.target.tagName !== "A") {
+    return;
+  }
   console.log(evt.target.textContent);
   if (evt.target.classList.contains("active")) {
     evt.target.classList.remove("active");
@@ -92,4 +94,12 @@ topMenuEl.addEventListener("click", function (evt) {
       subMenuEl.appendChild(linkEl);
     }
   }
+});
+
+subMenuEl.addEventListener("click", function (evt) {
+  evt.preventDefault();
+  if (evt.target.tagName !== "A") {
+    return;
+  }
+  console.log(evt.target.textContent);
 });
