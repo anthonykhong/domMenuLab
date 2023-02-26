@@ -65,7 +65,7 @@ topMenuEl.addEventListener("click", function (evt) {
   console.log(evt.target.textContent);
   if (evt.target.classList.contains("active")) {
     evt.target.classList.remove("active");
-    showingSubMenu = false;
+    const showingSubMenu = false;
     subMenuEl.style.top = "0";
     return;
   }
@@ -102,9 +102,10 @@ subMenuEl.addEventListener("click", function (evt) {
     return;
   }
   console.log(evt.target.textContent);
-  showingSubMenu = false;
+  const showingSubMenu = false;
   subMenuEl.style.top = "0";
   for (let i = 0; i < topMenuLinks.length; i++) {
     topMenuLinks[i].classList.remove("active");
   }
+  mainEl.innerHTML = `<h1>${evt.target.textContent}</h1>`;
 });
