@@ -76,6 +76,13 @@ topMenuEl.addEventListener("click", function (evt) {
     return linkObj.text === evt.target.textContent;
   });
   showingSubMenu = "subLinks" in linkData;
+  if (showingSubMenu === true) {
+    buildSubMenu(linkData.subLinks);
+    subMenuEl.style.top = "0";
+  } else if (showingSubMenu === false) {
+    subMenuEl.style.top = "0";
+    mainEl.innerHTML = "<h1>about</h1>";
+  }
 });
 
-// console.log(topMenuLinks);
+console.log(topMenuLinks);
