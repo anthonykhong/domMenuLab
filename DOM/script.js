@@ -78,4 +78,4 @@ topMenuEl.addEventListener("click", function (evt) {
   showingSubMenu = "subLinks" in linkData;
 });
 
-console.log(topMenuLinks);
+// console.log(topMenuLinks);
