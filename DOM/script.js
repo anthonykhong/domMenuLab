@@ -54,7 +54,7 @@ subMenuEl.classList = "flex-around";
 subMenuEl.style.position = "absolute";
 subMenuEl.style.top = "0";
 
-const topMenuLinks = document.querySelectorAll("a");
+const topMenuLinks = document.querySelectorAll("#top-menu a");
 const showingSubMenu = false;
 
 topMenuEl.addEventListener("click", function (evt) {
@@ -72,6 +72,10 @@ topMenuEl.addEventListener("click", function (evt) {
     topMenuLinks[i].classList.remove("active");
   }
   evt.target.NAV.classList.add("active");
+  const linkData = menuLinks.find(function (linkObj) {
+    return linkObj.text === evt.target.textContent;
+  });
+  showingSubMenu = "subLinks" in linkData;
 });
 
 console.log(topMenuLinks);
