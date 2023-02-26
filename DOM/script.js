@@ -102,4 +102,6 @@ subMenuEl.addEventListener("click", function (evt) {
     return;
   }
   console.log(evt.target.textContent);
+  showingSubMenu = false;
+  subMenuEl.style.top = "0";
 });
