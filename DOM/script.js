@@ -42,7 +42,7 @@ topMenuEl.classList = "flex-around";
 for (let i = 0; i < menuLinks.length; i++) {
   const link = menuLinks[i];
   const linkEl = document.createElement("a");
-  linkEl.href = link.href;
+  linkEl.setAttribute("href", link.href);
   linkEl.textContent = link.text;
   topMenuEl.appendChild(linkEl);
 }
@@ -59,30 +59,37 @@ const showingSubMenu = false;
 
 topMenuEl.addEventListener("click", function (evt) {
   evt.preventDefault();
-  if (evt.target.NAV !== "a") {
-    return;
-  }
-  if (evt.target.NAV === "active") {
-    evt.target.NAV.remove("active");
-    const showingSubMenu = false;
+  if (evt.target.tagName !== "A") return;
+  console.log(evt.target.textContent);
+  if (evt.target.classList.contains("active")) {
+    evt.target.classList.remove("active");
+    showingSubMenu = false;
     subMenuEl.style.top = "0";
     return;
   }
   for (let i = 0; i < topMenuLinks.length; i++) {
     topMenuLinks[i].classList.remove("active");
   }
-  evt.target.NAV.classList.add("active");
+  evt.target.classList.add("active");
   const linkData = menuLinks.find(function (linkObj) {
     return linkObj.text === evt.target.textContent;
   });
-  showingSubMenu = "subLinks" in linkData;
-  if (showingSubMenu === true) {
+  const showingSubMenu = "subLinks" in linkData;
+  if (showingSubMenu) {
     buildSubMenu(linkData.subLinks);
-    subMenuEl.style.top = "0";
-  } else if (showingSubMenu === false) {
+    subMenuEl.style.top = "100%";
+  } else {
     subMenuEl.style.top = "0";
     mainEl.innerHTML = "<h1>about</h1>";
   }
+  function buildSubMenu(subLinks) {
+    subMenuEl.innerHTML = "";
+    for (let i = 0; i < subLinks.length; i++) {
+      const link = subLinks[i];
+      const linkEl = document.createElement("a");
+      linkEl.setAttribute("href", link.href);
+      linkEl.textContent = link.text;
+      subMenuEl.appendChild(linkEl);
+    }
+  }
 });
-
-console.log(topMenuLinks);
