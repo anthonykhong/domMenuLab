@@ -104,7 +104,7 @@ subMenuEl.addEventListener("click", function (evt) {
   console.log(evt.target.textContent);
   showingSubMenu = false;
   subMenuEl.style.top = "0";
-  if (evt.target.classList.contains("active")) {
-    evt.target.classList.remove("active");
+  for (let i = 0; i < topMenuLinks.length; i++) {
+    topMenuLinks[i].classList.remove("active");
   }
 });
